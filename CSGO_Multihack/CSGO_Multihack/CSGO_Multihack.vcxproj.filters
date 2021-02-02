@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Файлы исходного кода">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Заголовочные файлы">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Файлы ресурсов">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Файлы исходного кода\D3D">
+      <UniqueIdentifier>{f39d7f6b-82be-40e7-9188-771b5ef81bba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Заголовочные файлы\imgui">
+      <UniqueIdentifier>{fd5e8a76-61e2-4835-9044-30add255462d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы исходного кода\imgui">
+      <UniqueIdentifier>{bbd1543f-f6c1-4566-8d17-bb564cadf81b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Информация">
+      <UniqueIdentifier>{6bcfd2b7-2140-417a-9760-066707b1907e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Заголовочные файлы\Hacks">
+      <UniqueIdentifier>{b423537a-f25e-4a6a-b748-fed84699c97c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Заголовочные файлы\Service">
+      <UniqueIdentifier>{761d469f-dcce-4672-83aa-b9652aa2dff6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы исходного кода\Hacks">
+      <UniqueIdentifier>{a879ef1e-12d4-46d0-954b-2eb0c4588303}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы исходного кода\Service">
+      <UniqueIdentifier>{ced1f6a4-6ab3-4058-9b72-8a843c6b79db}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
+    <ClCompile Include="d3dhook.cpp">
+      <Filter>Файлы исходного кода\D3D</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_tablabel.cpp">
+      <Filter>Файлы исходного кода\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_draw.cpp">
+      <Filter>Файлы исходного кода\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_demo.cpp">
+      <Filter>Файлы исходного кода\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_colorpicker.cpp">
+      <Filter>Файлы исходного кода\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui.cpp">
+      <Filter>Файлы исходного кода\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="d3dEndScene.cpp">
+      <Filter>Файлы исходного кода\D3D</Filter>
+    </ClCompile>
+    <ClCompile Include="Aimbot.cpp">
+      <Filter>Файлы исходного кода\Hacks</Filter>
+    </ClCompile>
+    <ClCompile Include="chams.cpp">
+      <Filter>Файлы исходного кода\Hacks</Filter>
+    </ClCompile>
+    <ClCompile Include="ConfigMgr.cpp">
+      <Filter>Файлы исходного кода\Service</Filter>
+    </ClCompile>
+    <ClCompile Include="esp.cpp">
+      <Filter>Файлы исходного кода\Hacks</Filter>
+    </ClCompile>
+    <ClCompile Include="FakeLag.cpp">
+      <Filter>Файлы исходного кода\Hacks</Filter>
+    </ClCompile>
+    <ClCompile Include="md5.cpp">
+      <Filter>Файлы исходного кода\Service</Filter>
+    </ClCompile>
+    <ClCompile Include="MemMgr.cpp">
+      <Filter>Файлы исходного кода\Service</Filter>
+    </ClCompile>
+    <ClCompile Include="NoFlash.cpp">
+      <Filter>Файлы исходного кода\Hacks</Filter>
+    </ClCompile>
+    <ClCompile Include="RadarHack.cpp">
+      <Filter>Файлы исходного кода\Hacks</Filter>
+    </ClCompile>
+    <ClCompile Include="d3dmenu.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
+    <ClCompile Include="Draw.cpp">
+      <Filter>Файлы исходного кода\Service</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\dx9\imgui_impl_dx9.cpp">
+      <Filter>Файлы исходного кода\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="glow.cpp">
+      <Filter>Файлы исходного кода\Hacks</Filter>
+    </ClCompile>
+    <ClCompile Include="globals.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
+    <ClCompile Include="WndProc.cpp">
+      <Filter>Файлы исходного кода\Service</Filter>
+    </ClCompile>
+    <ClCompile Include="TriggerBot.cpp">
+      <Filter>Файлы исходного кода\Hacks</Filter>
+    </ClCompile>
+    <ClCompile Include="Hooks.cpp">
+      <Filter>Файлы исходного кода\Hacks</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imguial_msgbox.cpp">
+      <Filter>Файлы исходного кода\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="Autowall.cpp">
+      <Filter>Файлы исходного кода\Hacks</Filter>
+    </ClCompile>
+    <ClCompile Include="GrenadePrediction.cpp">
+      <Filter>Файлы исходного кода\Hacks</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="imgui\imconfig.h">
+      <Filter>Заголовочные файлы\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\stb_truetype.h">
+      <Filter>Заголовочные файлы\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\stb_textedit.h">
+      <Filter>Заголовочные файлы\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\stb_rect_pack.h">
+      <Filter>Заголовочные файлы\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imgui_internal.h">
+      <Filter>Заголовочные файлы\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imgui.h">
+      <Filter>Заголовочные файлы\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\dx9\imgui_impl_dx9.h">
+      <Filter>Заголовочные файлы\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="Aimbot.h">
+      <Filter>Заголовочные файлы\Hacks</Filter>
+    </ClInclude>
+    <ClInclude Include="chams.h">
+      <Filter>Заголовочные файлы\Hacks</Filter>
+    </ClInclude>
+    <ClInclude Include="ConfigMgr.h">
+      <Filter>Заголовочные файлы\Service</Filter>
+    </ClInclude>
+    <ClInclude Include="sdk\include\csgosdk.h">
+      <Filter>Заголовочные файлы\Service</Filter>
+    </ClInclude>
+    <ClInclude Include="d3d.h">
+      <Filter>Заголовочные файлы\Service</Filter>
+    </ClInclude>
+    <ClInclude Include="Draw.h">
+      <Filter>Заголовочные файлы\Service</Filter>
+    </ClInclude>
+    <ClInclude Include="esp.h">
+      <Filter>Заголовочные файлы\Hacks</Filter>
+    </ClInclude>
+    <ClInclude Include="md5.h">
+      <Filter>Заголовочные файлы\Service</Filter>
+    </ClInclude>
+    <ClInclude Include="MemMgr.h">
+      <Filter>Заголовочные файлы\Service</Filter>
+    </ClInclude>
+    <ClInclude Include="glow.h">
+      <Filter>Заголовочные файлы\Hacks</Filter>
+    </ClInclude>
+    <ClInclude Include="globals.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="offsets.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="menu.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="Hooks.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imguial_msgbox.h">
+      <Filter>Заголовочные файлы\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="Autowall.h">
+      <Filter>Заголовочные файлы\Hacks</Filter>
+    </ClInclude>
+    <ClInclude Include="XorStr.h">
+      <Filter>Заголовочные файлы\Service</Filter>
+    </ClInclude>
+    <ClInclude Include="GrenadePrediction.h">
+      <Filter>Заголовочные файлы\Hacks</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="todolist.txt">
+      <Filter>Информация</Filter>
+    </Text>
+  </ItemGroup>
+</Project>
