@@ -95,7 +95,7 @@ INT WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrevInst, LPSTR lpCmdLine, int nC
 	std::string dllpath = DOWNLOAD_PATH + DLL_FILENAME;
 
 #ifdef _DEBUG
-	MessageBox(NULL, TEXT("Димон, приаттач дебаггер к этому процессу, после чего тыкай ОК. Вот только не жми ОК раньше времени, перезапускать придется."), TEXT("Debug mode"), MB_OK | MB_ICONWARNING);
+	MessageBox(NULL, TEXT("Р”РёРјРѕРЅ, РїСЂРёР°С‚С‚Р°С‡ РґРµР±Р°РіРіРµСЂ Рє СЌС‚РѕРјСѓ РїСЂРѕС†РµСЃСЃСѓ, РїРѕСЃР»Рµ С‡РµРіРѕ С‚С‹РєР°Р№ РћРљ. Р’РѕС‚ С‚РѕР»СЊРєРѕ РЅРµ Р¶РјРё РћРљ СЂР°РЅСЊС€Рµ РІСЂРµРјРµРЅРё, РїРµСЂРµР·Р°РїСѓСЃРєР°С‚СЊ РїСЂРёРґРµС‚СЃСЏ."), TEXT("Debug mode"), MB_OK | MB_ICONWARNING);
 #endif
 
 	if (cmd.find("-upd") == std::string::npos)
@@ -116,7 +116,7 @@ INT WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrevInst, LPSTR lpCmdLine, int nC
 		else
 		{
 			remove(dllpath.c_str());
-			MessageBox(NULL, _T("Ошибка инициализации PhantomHack. Попробуйте еще раз."), _T("Ошибка"), MB_OK | MB_ICONERROR);
+			MessageBox(NULL, _T("РћС€РёР±РєР° РёРЅРёС†РёР°Р»РёР·Р°С†РёРё PhantomHack. РџРѕРїСЂРѕР±СѓР№С‚Рµ РµС‰Рµ СЂР°Р·."), _T("РћС€РёР±РєР°"), MB_OK | MB_ICONERROR);
 			return 2;
 		}
 	}
@@ -140,11 +140,11 @@ INT WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrevInst, LPSTR lpCmdLine, int nC
 
 	if (!hWnd)
 	{
-		MessageBox(NULL, _T("Ошибка создания окна."), _T("Ошибка"), MB_OK | MB_ICONERROR);
+		MessageBox(NULL, _T("РћС€РёР±РєР° СЃРѕР·РґР°РЅРёСЏ РѕРєРЅР°."), _T("РћС€РёР±РєР°"), MB_OK | MB_ICONERROR);
 		return 2;
 	}
 
-	CreateWindowElement(hWnd, ET_STATIC, _T("Информация:"), hInst, WS_VISIBLE, NULL, IDC_INFOSIGN, 10, 5, 100, 15);
+	CreateWindowElement(hWnd, ET_STATIC, _T("РРЅС„РѕСЂРјР°С†РёСЏ:"), hInst, WS_VISIBLE, NULL, IDC_INFOSIGN, 10, 5, 100, 15);
 	Info = CreateWindowElement(hWnd, ET_EDIT, _T(""), hInst, WS_VISIBLE | WS_BORDER | ES_LEFT | ES_MULTILINE | ES_AUTOVSCROLL | ES_READONLY, NULL, IDC_INFORMATION, 10, 20, 266, 205 + MAINWND_HEIGHT_MOD);
 	CreateWindowElement(hWnd, ET_STATIC, _T("ID:"), hInst, WS_VISIBLE, NULL, IDC_USERIDSIGN, 10, 231 + MAINWND_HEIGHT_MOD, 30, 15);
 	hUserID = CreateWindowElement(hWnd, ET_EDIT, _T("..."), hInst, WS_VISIBLE | WS_BORDER| ES_CENTER | ES_READONLY, NULL, IDC_USERID, 28, 230 + MAINWND_HEIGHT_MOD, 248, 18);
@@ -152,7 +152,7 @@ INT WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrevInst, LPSTR lpCmdLine, int nC
 		OUT_TT_PRECIS, CLIP_DEFAULT_PRECIS, DEFAULT_QUALITY,
 		DEFAULT_PITCH | FF_DONTCARE, TEXT("Tahoma"));
 	SendMessage(hUserID, WM_SETFONT, (WPARAM)hFont, TRUE);
-	hButton = CreateWindowElement(hWnd, ET_BUTTON, _T("Подождите..."), hInst, WS_VISIBLE | WS_DISABLED | WS_TABSTOP | BS_FLAT, NULL, IDC_ACTIVATE, 9, 252 + MAINWND_HEIGHT_MOD, 268, 35);
+	hButton = CreateWindowElement(hWnd, ET_BUTTON, _T("РџРѕРґРѕР¶РґРёС‚Рµ..."), hInst, WS_VISIBLE | WS_DISABLED | WS_TABSTOP | BS_FLAT, NULL, IDC_ACTIVATE, 9, 252 + MAINWND_HEIGHT_MOD, 268, 35);
 	
 	SetForegroundWindow(hWnd);
 	SetFocus(Info);
@@ -209,11 +209,11 @@ unsigned int __stdcall InjectorRoutine(LPVOID lpParam)
 
 	if (thrd->upd)
 	{
-		AddInfoLine(_T("PhantomHack был успешно обновлён и готов к работе!"), FALSE);
-		std::wstring cver_wstr = L"Текущая версия: v";
+		AddInfoLine(_T("PhantomHack Р±С‹Р» СѓСЃРїРµС€РЅРѕ РѕР±РЅРѕРІР»С‘РЅ Рё РіРѕС‚РѕРІ Рє СЂР°Р±РѕС‚Рµ!"), FALSE);
+		std::wstring cver_wstr = L"РўРµРєСѓС‰Р°СЏ РІРµСЂСЃРёСЏ: v";
 		cver_wstr.append(_T(WHVERSION));
 		AddInfoLine(cver_wstr.c_str());
-		AddInfoLine(_T("Можете перезапустить PhantomHack!"));
+		AddInfoLine(_T("РњРѕР¶РµС‚Рµ РїРµСЂРµР·Р°РїСѓСЃС‚РёС‚СЊ PhantomHack!"));
 		ChangeButtonState(BTS_RESTART);
 		return 0;
 	}
@@ -221,18 +221,18 @@ unsigned int __stdcall InjectorRoutine(LPVOID lpParam)
 	std::string updpath = DOWNLOAD_PATH + UPDATER_FILENAME;
 	remove(updpath.c_str());
 
-	AddInfoLine(_T("PhantomHack запущен!"), FALSE);
+	AddInfoLine(_T("PhantomHack Р·Р°РїСѓС‰РµРЅ!"), FALSE);
 
 	CheckForUpdates();
 
 	if (!g_Injected && !thrd->upd)
 	{
 		ChangeButtonState(BTS_INJECT);
-		AddInfoLine(_T("Игра Counter-Strike: Global Offensive не запущена."));
-		AddInfoLine(_T("Запустите игру, дождитесь пока она загрузится и откроется главное меню. Затем нажмите кнопку \"Подключиться к игре\"..."));
+		AddInfoLine(_T("РРіСЂР° Counter-Strike: Global Offensive РЅРµ Р·Р°РїСѓС‰РµРЅР°."));
+		AddInfoLine(_T("Р—Р°РїСѓСЃС‚РёС‚Рµ РёРіСЂСѓ, РґРѕР¶РґРёС‚РµСЃСЊ РїРѕРєР° РѕРЅР° Р·Р°РіСЂСѓР·РёС‚СЃСЏ Рё РѕС‚РєСЂРѕРµС‚СЃСЏ РіР»Р°РІРЅРѕРµ РјРµРЅСЋ. Р—Р°С‚РµРј РЅР°Р¶РјРёС‚Рµ РєРЅРѕРїРєСѓ \"РџРѕРґРєР»СЋС‡РёС‚СЊСЃСЏ Рє РёРіСЂРµ\"..."));
 	}
 	else if (g_Injected && !thrd->upd)
-		AddInfoLine(_T("Обнаружен csgo.exe, подготовка хака к работе..."));
+		AddInfoLine(_T("РћР±РЅР°СЂСѓР¶РµРЅ csgo.exe, РїРѕРґРіРѕС‚РѕРІРєР° С…Р°РєР° Рє СЂР°Р±РѕС‚Рµ..."));
 
 
 	if (!g_Injected)
@@ -293,7 +293,7 @@ void ActivationResponse(bool Success)
 
 	if (hPipe == INVALID_HANDLE_VALUE)
 	{
-		MessageBox(NULL, _T("Ошибка инициализации PhantomHack. Попробуйте еще раз."), _T("Ошибка"), MB_OK | MB_ICONERROR);
+		MessageBox(NULL, _T("РћС€РёР±РєР° РёРЅРёС†РёР°Р»РёР·Р°С†РёРё PhantomHack. РџРѕРїСЂРѕР±СѓР№С‚Рµ РµС‰Рµ СЂР°Р·."), _T("РћС€РёР±РєР°"), MB_OK | MB_ICONERROR);
 		ExitProcess(0);
 		return;
 	}
@@ -358,12 +358,12 @@ void __fastcall UpdaterProgress(int per, size_t bytesDownloaded, size_t fullSize
 	kb2 = fullSize / 1000;
 	if (bytesDownloaded < 1000)
 	{
-		dstatus.Format(_T("Загружено %i%% (%i Байт из %i КБ)"), per, kb1, kb2);
+		dstatus.Format(_T("Р—Р°РіСЂСѓР¶РµРЅРѕ %i%% (%i Р‘Р°Р№С‚ РёР· %i РљР‘)"), per, kb1, kb2);
 	}
 	else
 	{
 		kb1 = bytesDownloaded / 1000;
-		dstatus.Format( _T("Загружено %i%% (%i КБ из %i КБ)"), per, kb1, kb2);
+		dstatus.Format( _T("Р—Р°РіСЂСѓР¶РµРЅРѕ %i%% (%i РљР‘ РёР· %i РљР‘)"), per, kb1, kb2);
 	}
 
 	SetWindowText(hButton, dstatus.GetStr().c_str());
@@ -375,24 +375,24 @@ void CheckForUpdates()
 	std::wstring ui;
 	std::string current_version = WHVERSION;
 	std::wstring cver_wstr = _T(WHVERSION);
-	ui = L"Текущая версия: v" + cver_wstr;
+	ui = L"РўРµРєСѓС‰Р°СЏ РІРµСЂСЃРёСЏ: v" + cver_wstr;
 	AddInfoLine(ui.c_str());
-	AddInfoLine(_T("Проверка на наличие обновлений..."));
+	AddInfoLine(_T("РџСЂРѕРІРµСЂРєР° РЅР° РЅР°Р»РёС‡РёРµ РѕР±РЅРѕРІР»РµРЅРёР№..."));
 
 	std::string latest_version = HTTPPost(ACTIVATION_HOST, md5("ucheck") + "=" + WHVERSION);
 	if (latest_version.c_str() == "0" || latest_version.c_str() == "")
-		AddInfoLine(_T("Ошибка проверки обновлений."));
+		AddInfoLine(_T("РћС€РёР±РєР° РїСЂРѕРІРµСЂРєРё РѕР±РЅРѕРІР»РµРЅРёР№."));
 	else if (latest_version == current_version)
 	{
-		AddInfoLine(_T("Новых обновлений нет.\r\n"));
+		AddInfoLine(_T("РќРѕРІС‹С… РѕР±РЅРѕРІР»РµРЅРёР№ РЅРµС‚.\r\n"));
 		AddInfoLine(_T("****************************************"));
 	}
 	else
 	{
 		std::wstring wstr2(latest_version.begin(), latest_version.end());
-		ui = _T("Ваш PhantomHack устарел! Новая версия: v") + wstr2;
+		ui = _T("Р’Р°С€ PhantomHack СѓСЃС‚Р°СЂРµР»! РќРѕРІР°СЏ РІРµСЂСЃРёСЏ: v") + wstr2;
 		AddInfoLine(ui.c_str());
-		AddInfoLine(_T("Загрузка обновления..."));
+		AddInfoLine(_T("Р—Р°РіСЂСѓР·РєР° РѕР±РЅРѕРІР»РµРЅРёСЏ..."));
 		DWORD s_size = atoi(HTTPPost(ACTIVATION_HOST, md5("getsize") + "=" + md5("activator")).c_str());
 		//DWORD size = _downloadFile(ACTIVATION_HOST + "?" + md5("getupd") + "=" + g_UserID, DOWNLOAD_PATH + (std::string)"g8h7ther987k8re.tmp", s_size);
 		std::string durl = ACTIVATION_HOST + "?" + md5("getupd") + "=" + g_UserID;
@@ -414,11 +414,11 @@ void CheckForUpdates()
 		HRESULT hr = URLDownloadToFile(NULL, wdurl.c_str(), wdpath.c_str(), 0, pBindStatusCallback);
 
 		if (s_size == 0 || !SUCCEEDED(hr))
-			AddInfoLine(_T("Ошибка загрузки обновления."));
+			AddInfoLine(_T("РћС€РёР±РєР° Р·Р°РіСЂСѓР·РєРё РѕР±РЅРѕРІР»РµРЅРёСЏ."));
 		else
 		{
 			RemoveBOMFromFile(wdpath.c_str());
-			AddInfoLine(_T("Обновление загружено!"));
+			AddInfoLine(_T("РћР±РЅРѕРІР»РµРЅРёРµ Р·Р°РіСЂСѓР¶РµРЅРѕ!"));
 			Sleep(1500);
 			LaunchUpdater(FALSE);
 		}
@@ -513,10 +513,10 @@ unsigned int __stdcall _BackgroundFunc(LPVOID lpData)
 
 	if (retry == false)
 	{
-		AddInfoLine(_T("Проверка активации..."));
+		AddInfoLine(_T("РџСЂРѕРІРµСЂРєР° Р°РєС‚РёРІР°С†РёРё..."));
 	}
 	else
-		AddInfoLine(_T("Попытка проверки активации..."));
+		AddInfoLine(_T("РџРѕРїС‹С‚РєР° РїСЂРѕРІРµСЂРєРё Р°РєС‚РёРІР°С†РёРё..."));
 
 	std::string postargs = md5("getip") + "=1";
 	g_IP = HTTPPost(ACTIVATION_HOST, postargs); 
@@ -525,19 +525,19 @@ unsigned int __stdcall _BackgroundFunc(LPVOID lpData)
 	result = HTTPPost(ACTIVATION_HOST, postargs); 
 	if (result == "1")
 	{
-		AddInfoLine(_T("Вы не зарегистрированы, зарегистрируйтесь...")); 
+		AddInfoLine(_T("Р’С‹ РЅРµ Р·Р°СЂРµРіРёСЃС‚СЂРёСЂРѕРІР°РЅС‹, Р·Р°СЂРµРіРёСЃС‚СЂРёСЂСѓР№С‚РµСЃСЊ...")); 
 		OpenRegisterWindow(hInst, hMainWindow, hEvent); 
 		WaitForSingleObject(hRegisterEvent, INFINITE);
 		if(g_RegSuccess == REGSTATE_SUCCESS)
-			AddInfoLine(_T("Успешная регистрация!"));
+			AddInfoLine(_T("РЈСЃРїРµС€РЅР°СЏ СЂРµРіРёСЃС‚СЂР°С†РёСЏ!"));
 		else if (g_RegSuccess == REGSTATE_CONFLICT)
 		{
-			AddInfoLine(_T("Невозможно зарегистрироваться. Этот ID оборудования уже привязан к существующей учетной записи."));
+			AddInfoLine(_T("РќРµРІРѕР·РјРѕР¶РЅРѕ Р·Р°СЂРµРіРёСЃС‚СЂРёСЂРѕРІР°С‚СЊСЃСЏ. Р­С‚РѕС‚ ID РѕР±РѕСЂСѓРґРѕРІР°РЅРёСЏ СѓР¶Рµ РїСЂРёРІСЏР·Р°РЅ Рє СЃСѓС‰РµСЃС‚РІСѓСЋС‰РµР№ СѓС‡РµС‚РЅРѕР№ Р·Р°РїРёСЃРё."));
 			ChangeButtonState(BTS_EXIT);
 			return 0;
 		}
 		else
-		AddInfoLine(_T("Ошибка регистрации! Повторная попытка..."));
+		AddInfoLine(_T("РћС€РёР±РєР° СЂРµРіРёСЃС‚СЂР°С†РёРё! РџРѕРІС‚РѕСЂРЅР°СЏ РїРѕРїС‹С‚РєР°..."));
 			UpdateFunc(hInst, hMainWindow, hEvent, TRUE);
 		return 0;
 	}
@@ -545,9 +545,9 @@ unsigned int __stdcall _BackgroundFunc(LPVOID lpData)
 	{
 		std::string username = HTTPPost(ACTIVATION_HOST, md5("getusr") + "=" + g_UserID);
 		std::wstring wstr(username.begin(), username.end());
-		ui = _T("Ваше имя пользователя: ") + wstr;
+		ui = _T("Р’Р°С€Рµ РёРјСЏ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ: ") + wstr;
 		AddInfoLine(ui.c_str());
-		AddInfoLine(_T("Ваш PhantomHack не активирован, обратитесь к продавцу и повторите проверку активации."));
+		AddInfoLine(_T("Р’Р°С€ PhantomHack РЅРµ Р°РєС‚РёРІРёСЂРѕРІР°РЅ, РѕР±СЂР°С‚РёС‚РµСЃСЊ Рє РїСЂРѕРґР°РІС†Сѓ Рё РїРѕРІС‚РѕСЂРёС‚Рµ РїСЂРѕРІРµСЂРєСѓ Р°РєС‚РёРІР°С†РёРё."));
 		ChangeButtonState(BTS_RETRY);
 		return 0;
 	}
@@ -555,9 +555,9 @@ unsigned int __stdcall _BackgroundFunc(LPVOID lpData)
 	{
 		std::string username = HTTPPost(ACTIVATION_HOST, md5("getusr") + "=" + g_UserID);
 		std::wstring wstr(username.begin(), username.end());
-		ui = _T("Ваше имя пользователя: ") + wstr;
+		ui = _T("Р’Р°С€Рµ РёРјСЏ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ: ") + wstr;
 		AddInfoLine(ui.c_str());
-		AddInfoLine(_T("Ваш PhantomHack не активирован и подлежит удалению с вашего ПК за неуплату. Вас предупреждали. "));
+		AddInfoLine(_T("Р’Р°С€ PhantomHack РЅРµ Р°РєС‚РёРІРёСЂРѕРІР°РЅ Рё РїРѕРґР»РµР¶РёС‚ СѓРґР°Р»РµРЅРёСЋ СЃ РІР°С€РµРіРѕ РџРљ Р·Р° РЅРµСѓРїР»Р°С‚Сѓ. Р’Р°СЃ РїСЂРµРґСѓРїСЂРµР¶РґР°Р»Рё. "));
 		LaunchUpdater(TRUE);
 		ChangeButtonState(BTS_EXIT);
 		return 0;
@@ -568,20 +568,20 @@ unsigned int __stdcall _BackgroundFunc(LPVOID lpData)
 		{
 			std::string username = HTTPPost(ACTIVATION_HOST, md5("getusr") + "=" + g_UserID);
 			std::wstring wstr(username.begin(), username.end());
-			ui = _T("Ваше имя пользователя: ") + wstr;
+			ui = _T("Р’Р°С€Рµ РёРјСЏ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ: ") + wstr;
 			AddInfoLine(ui.c_str());
-			AddInfoLine(_T("Успешная активация!"));
+			AddInfoLine(_T("РЈСЃРїРµС€РЅР°СЏ Р°РєС‚РёРІР°С†РёСЏ!"));
 		}
 		else
 		{
-			AddInfoLine(_T("Ошибка проверки активации."));
+			AddInfoLine(_T("РћС€РёР±РєР° РїСЂРѕРІРµСЂРєРё Р°РєС‚РёРІР°С†РёРё."));
 			ChangeButtonState(BTS_EXIT);
 			return 0;
 		}
 	}
 	else
 	{
-		AddInfoLine(_T("Ошибка сервера активации."));
+		AddInfoLine(_T("РћС€РёР±РєР° СЃРµСЂРІРµСЂР° Р°РєС‚РёРІР°С†РёРё."));
 		ChangeButtonState(BTS_RETRY);
 		return 0;
 	}
@@ -589,17 +589,17 @@ unsigned int __stdcall _BackgroundFunc(LPVOID lpData)
 	
 	g_Activated = TRUE;
 	AddInfoLine(_T("****************************************"));
-	AddInfoLine(_T("Готово к игре!"));
+	AddInfoLine(_T("Р“РѕС‚РѕРІРѕ Рє РёРіСЂРµ!"));
 	AddInfoLine(_T("****************************************"));
-	AddInfoLine(_T("Как пользоваться:"));
-	AddInfoLine(_T("-- Клавиша INSERT --"));
-	AddInfoLine(_T("После того как вы нажмете здесь Играть, нажмите INSERT в игре для подробного меню."));
+	AddInfoLine(_T("РљР°Рє РїРѕР»СЊР·РѕРІР°С‚СЊСЃСЏ:"));
+	AddInfoLine(_T("-- РљР»Р°РІРёС€Р° INSERT --"));
+	AddInfoLine(_T("РџРѕСЃР»Рµ С‚РѕРіРѕ РєР°Рє РІС‹ РЅР°Р¶РјРµС‚Рµ Р·РґРµСЃСЊ РРіСЂР°С‚СЊ, РЅР°Р¶РјРёС‚Рµ INSERT РІ РёРіСЂРµ РґР»СЏ РїРѕРґСЂРѕР±РЅРѕРіРѕ РјРµРЅСЋ."));
 	AddInfoLine(_T(""));
 	AddInfoLine(_T(""));
 	AddInfoLine(_T(""));
-	AddInfoLine(_T("Помните, что если вы будете злоупотреблять - вы можете быть забанены патрулем!"));
+	AddInfoLine(_T("РџРѕРјРЅРёС‚Рµ, С‡С‚Рѕ РµСЃР»Рё РІС‹ Р±СѓРґРµС‚Рµ Р·Р»РѕСѓРїРѕС‚СЂРµР±Р»СЏС‚СЊ - РІС‹ РјРѕР¶РµС‚Рµ Р±С‹С‚СЊ Р·Р°Р±Р°РЅРµРЅС‹ РїР°С‚СЂСѓР»РµРј!"));
 	AddInfoLine(_T("****************************************"));
-	AddInfoLine(_T("Нажмите Играть и наслаждайтесь!"));
+	AddInfoLine(_T("РќР°Р¶РјРёС‚Рµ РРіСЂР°С‚СЊ Рё РЅР°СЃР»Р°Р¶РґР°Р№С‚РµСЃСЊ!"));
 
 	ChangeButtonState(BTS_PLAY); 
 
@@ -619,47 +619,47 @@ void ChangeButtonState(int state)
 	{
 		case BTS_WAITING:
 			EnableWindow(hButton, FALSE);
-			SetWindowText(hButton, _T("Подождите..."));
+			SetWindowText(hButton, _T("РџРѕРґРѕР¶РґРёС‚Рµ..."));
 			g_ButtonState = state;
 			break;
 
 		case BTS_RETRY:
 			EnableWindow(hButton, TRUE);
-			SetWindowText(hButton, _T("Подключиться еще раз"));
+			SetWindowText(hButton, _T("РџРѕРґРєР»СЋС‡РёС‚СЊСЃСЏ РµС‰Рµ СЂР°Р·"));
 			g_ButtonState = state;
 			break;
 
 		case BTS_REGISTER:
 			EnableWindow(hButton, TRUE);
-			SetWindowText(hButton, _T("Регистрация"));
+			SetWindowText(hButton, _T("Р РµРіРёСЃС‚СЂР°С†РёСЏ"));
 			g_ButtonState = state;
 			break;
 
 		case BTS_PLAY:
 			EnableWindow(hButton, TRUE);
-			SetWindowText(hButton, _T("Играть"));
+			SetWindowText(hButton, _T("РРіСЂР°С‚СЊ"));
 			g_ButtonState = state;
 			break;
 
 		case BTS_EXIT:
 			EnableWindow(hButton, TRUE);
-			SetWindowText(hButton, _T("Выход"));
+			SetWindowText(hButton, _T("Р’С‹С…РѕРґ"));
 			g_ButtonState = state;
 			break;
 		case BTS_INJECT:
 			EnableWindow(hButton, TRUE);
-			SetWindowText(hButton, _T("Подключиться к игре"));
+			SetWindowText(hButton, _T("РџРѕРґРєР»СЋС‡РёС‚СЊСЃСЏ Рє РёРіСЂРµ"));
 			g_ButtonState = state;
 			break;
 		case BTS_RESTART:
 			EnableWindow(hButton, TRUE);
-			SetWindowText(hButton, _T("Перезапустить"));
+			SetWindowText(hButton, _T("РџРµСЂРµР·Р°РїСѓСЃС‚РёС‚СЊ"));
 			g_ButtonState = state;
 			break;
 
 		default:
 			EnableWindow(hButton, FALSE);
-			SetWindowText(hButton, _T("Подождите..."));
+			SetWindowText(hButton, _T("РџРѕРґРѕР¶РґРёС‚Рµ..."));
 			g_ButtonState = BTS_WAITING;
 	}
 }
@@ -695,29 +695,29 @@ unsigned int __stdcall _RegWndThread(LPVOID lpData)
 	cnum[1] = '\0';
 	classname += cnum;
 	
-	HWND hWnd = CreateWindowEasy(classname.c_str(), &RegWndProc, hInst, _T("Регистрация пользователя"), NULL, x, y, 350, 248, DEFAULT_COLOR, WS_OVERLAPPED | WS_CAPTION | WS_BORDER | WS_SYSMENU | WS_POPUPWINDOW, WS_EX_PALETTEWINDOW);
+	HWND hWnd = CreateWindowEasy(classname.c_str(), &RegWndProc, hInst, _T("Р РµРіРёСЃС‚СЂР°С†РёСЏ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ"), NULL, x, y, 350, 248, DEFAULT_COLOR, WS_OVERLAPPED | WS_CAPTION | WS_BORDER | WS_SYSMENU | WS_POPUPWINDOW, WS_EX_PALETTEWINDOW);
 	ShowWindow(hWnd, TRUE);
 	EnableMenuItem(GetSystemMenu(hWnd, FALSE), SC_CLOSE, MF_BYCOMMAND | MF_DISABLED | MF_GRAYED);
 	if (!hWnd)
 	{
-		MessageBox(NULL, _T("Ошибка создания окна."), _T("Ошибка"), MB_OK | MB_ICONERROR);
+		MessageBox(NULL, _T("РћС€РёР±РєР° СЃРѕР·РґР°РЅРёСЏ РѕРєРЅР°."), _T("РћС€РёР±РєР°"), MB_OK | MB_ICONERROR);
 		return 2;
 	}
-	HWND hSign = CreateWindowElement(hWnd, ET_STATIC, _T("Это первая попытка запуска PhantomHack с этого ПК.\r\nНеобходимо для привязки PhantomHack к вашему ПК.\r\nПожалуйста зарегистрируйтесь..."), hInst, WS_VISIBLE, NULL, IDC_REGSIGN, 10, 5, 300, 45);
+	HWND hSign = CreateWindowElement(hWnd, ET_STATIC, _T("Р­С‚Рѕ РїРµСЂРІР°СЏ РїРѕРїС‹С‚РєР° Р·Р°РїСѓСЃРєР° PhantomHack СЃ СЌС‚РѕРіРѕ РџРљ.\r\nРќРµРѕР±С…РѕРґРёРјРѕ РґР»СЏ РїСЂРёРІСЏР·РєРё PhantomHack Рє РІР°С€РµРјСѓ РџРљ.\r\nРџРѕР¶Р°Р»СѓР№СЃС‚Р° Р·Р°СЂРµРіРёСЃС‚СЂРёСЂСѓР№С‚РµСЃСЊ..."), hInst, WS_VISIBLE, NULL, IDC_REGSIGN, 10, 5, 300, 45);
 	LONG style = GetWindowLong(hSign, GWL_STYLE);
 	style &= ~SS_SIMPLE;
 	SetWindowLong(hSign, GWL_STYLE, style);
 	UpdateWindow(hSign);
-	CreateWindowElement(hWnd, ET_STATIC, _T("Введите логин:"), hInst, WS_VISIBLE, NULL, IDC_LOGINSIGN, 10, 50, 80, 15);
+	CreateWindowElement(hWnd, ET_STATIC, _T("Р’РІРµРґРёС‚Рµ Р»РѕРіРёРЅ:"), hInst, WS_VISIBLE, NULL, IDC_LOGINSIGN, 10, 50, 80, 15);
 	CreateWindowElement(hWnd, ET_EDIT, _T(""), hInst, WS_VISIBLE | WS_BORDER, NULL, IDC_LOGIN, 10, 65, 150, 20);
-	CreateWindowElement(hWnd, ET_STATIC, _T("Введите e-mail:"), hInst, WS_VISIBLE, NULL, IDC_EMAILSIGN, 174, 50, 80, 15);
+	CreateWindowElement(hWnd, ET_STATIC, _T("Р’РІРµРґРёС‚Рµ e-mail:"), hInst, WS_VISIBLE, NULL, IDC_EMAILSIGN, 174, 50, 80, 15);
 	CreateWindowElement(hWnd, ET_EDIT, _T(""), hInst, WS_VISIBLE | WS_BORDER, NULL, IDC_EMAIL, 174, 65, 150, 20);
-	CreateWindowElement(hWnd, ET_STATIC, _T("Введите пароль:"), hInst, WS_VISIBLE, NULL, IDC_PASS_SIGN, 10, 90, 120, 15);
+	CreateWindowElement(hWnd, ET_STATIC, _T("Р’РІРµРґРёС‚Рµ РїР°СЂРѕР»СЊ:"), hInst, WS_VISIBLE, NULL, IDC_PASS_SIGN, 10, 90, 120, 15);
 	CreateWindowElement(hWnd, ET_EDIT, _T(""), hInst, WS_VISIBLE | WS_BORDER | ES_PASSWORD, NULL, IDC_PASSWORD, 10, 105, 150, 20);
-	CreateWindowElement(hWnd, ET_STATIC, _T("Повторите пароль:"), hInst, WS_VISIBLE, NULL, IDC_PASSCONFSIGN, 174, 90, 120, 15);
+	CreateWindowElement(hWnd, ET_STATIC, _T("РџРѕРІС‚РѕСЂРёС‚Рµ РїР°СЂРѕР»СЊ:"), hInst, WS_VISIBLE, NULL, IDC_PASSCONFSIGN, 174, 90, 120, 15);
 	CreateWindowElement(hWnd, ET_EDIT, _T(""), hInst, WS_VISIBLE | WS_BORDER | ES_PASSWORD, NULL, IDC_PASSCONF, 174, 105, 150, 20);
-	CreateWindowElement(hWnd, ET_CHECKBOX, _T("Я заполнил все поля верно"), hInst, WS_VISIBLE, NULL, IDC_ICHECKED, 10, 135, 175, 20);
-	CreateWindowElement(hWnd, ET_BUTTON, _T("Зарегистрироваться"), hInst, WS_VISIBLE | WS_DISABLED | WS_TABSTOP | BS_FLAT, NULL, IDC_REGISTER, 9, 160, 316, 40);
+	CreateWindowElement(hWnd, ET_CHECKBOX, _T("РЇ Р·Р°РїРѕР»РЅРёР» РІСЃРµ РїРѕР»СЏ РІРµСЂРЅРѕ"), hInst, WS_VISIBLE, NULL, IDC_ICHECKED, 10, 135, 175, 20);
+	CreateWindowElement(hWnd, ET_BUTTON, _T("Р—Р°СЂРµРіРёСЃС‚СЂРёСЂРѕРІР°С‚СЊСЃСЏ"), hInst, WS_VISIBLE | WS_DISABLED | WS_TABSTOP | BS_FLAT, NULL, IDC_REGISTER, 9, 160, 316, 40);
 	while ((iGetOk = GetMessage(&msg, NULL, 0, 0)) != 0)
 	{
 		if (iGetOk == -1)
@@ -848,7 +848,7 @@ xstring GetTexturesPath()
 	TCHAR filename[MAX_PATH];
 	if (GetModuleFileNameEx(g_hCSGO, NULL, filename, MAX_PATH) == 0)
 	{
-		MessageBox(NULL, TEXT("Не удается подгрузить необходимые ресурсы."), TEXT("Ошибка"), MB_OK | MB_ICONERROR);
+		MessageBox(NULL, TEXT("РќРµ СѓРґР°РµС‚СЃСЏ РїРѕРґРіСЂСѓР·РёС‚СЊ РЅРµРѕР±С…РѕРґРёРјС‹Рµ СЂРµСЃСѓСЂСЃС‹."), TEXT("РћС€РёР±РєР°"), MB_OK | MB_ICONERROR);
 		exit(0);
 		return _T("");
 	}
@@ -882,7 +882,7 @@ xstring GetSoundsPath()
 	TCHAR filename[MAX_PATH];
 	if (GetModuleFileNameEx(g_hCSGO, NULL, filename, MAX_PATH) == 0)
 	{
-		MessageBox(NULL, TEXT("Не удается подгрузить необходимые ресурсы."), TEXT("Ошибка"), MB_OK | MB_ICONERROR);
+		MessageBox(NULL, TEXT("РќРµ СѓРґР°РµС‚СЃСЏ РїРѕРґРіСЂСѓР·РёС‚СЊ РЅРµРѕР±С…РѕРґРёРјС‹Рµ СЂРµСЃСѓСЂСЃС‹."), TEXT("РћС€РёР±РєР°"), MB_OK | MB_ICONERROR);
 		exit(0);
 		return _T("");
 	}
